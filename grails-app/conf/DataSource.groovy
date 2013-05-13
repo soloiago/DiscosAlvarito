@@ -40,4 +40,23 @@ environments {
             }
         }
     }
+    bees {
+        dataSource {
+            dbCreate = "update"
+            username = "iagouserdb"
+            password = "iagopassdb"
+            url = "jdbc:cloudbees://discosalvaritodb"
+            pooled = true
+            properties {
+                maxActive = -1
+                minEvictableIdleTimeMillis=1800000
+                timeBetweenEvictionRunsMillis=1800000
+                numTestsPerEvictionRun=3
+                testOnBorrow=true
+                testWhileIdle=true
+                testOnReturn=true
+                validationQuery="SELECT 1"
+            }
+        }
+    }
 }
